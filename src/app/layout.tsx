@@ -7,7 +7,11 @@ import { Toaster } from "sonner";
 import SmoothScroll from "./_components/smooth-scroll";
 import Header from "./_components/header";
 import Footer from "./_components/footer";
-import MetaPixel from "./_components/meta-pixel";
+import dynamic from "next/dynamic";
+
+const MetaPixel = dynamic(() => import("./_components/meta-pixel"), {
+  ssr: false,
+});
 
 const garet = fonts({
   src: [
